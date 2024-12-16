@@ -8,7 +8,9 @@
 // Ajuste la fonction "multiply" qui prend deux paramètres (a et b) et retourne la somme multipliée des deux paramètres.
 // Exemple : a = 2, b = 3 => 2 * 3 = 6
 
-export const multiply = (a, b) => a * b;
+export const multiply = (a, b) => {
+	return a * b;
+};
 
 console.info("Exercice 1 :", multiply(2, 3));
 
@@ -60,7 +62,8 @@ console.info("Exercice 4 : ", sumArray([5, 6, 7]));
 // Exemple : "Hello" => "olleH"
 
 export const reverseString = (string) => {
-	return string.split("").reverse().join("");
+	const reversed = string.split("").reverse().join("");
+	return reversed;
 };
 
 console.info("Exercice 5 : ", reverseString("Hello"));
@@ -72,13 +75,13 @@ console.info("Exercice 5 : ", reverseString("Hello"));
 // Exemple : [1, 2, 3] => 3
 
 export const getMax = (array) => {
-	let number = 0;
+	let max = 0;
 	for (let i = 0; i < array.length; i++) {
-		if (array[i] > number) {
-			number = array[i];
+		if (array[i] > max) {
+			max = array[i];
 		}
 	}
-	return number;
+	return max;
 };
 
 console.info("Exercice 6 : ", getMax([1, 2, 3]));
@@ -90,13 +93,13 @@ console.info("Exercice 6 : ", getMax([1, 2, 3]));
 // Exemple : [1, 2, 3] => 1
 
 export const getMin = (array) => {
-	let number = 100;
+	let min = 9999;
 	for (let i = 0; i < array.length; i++) {
-		if (array[i] < number) {
-			number = array[i];
+		if (array[i] < min) {
+			min = array[i];
 		}
 	}
-	return number;
+	return min;
 };
 
 console.info("Exercice 7 : ", getMin([1, 2, 3]));
@@ -108,11 +111,8 @@ console.info("Exercice 7 : ", getMin([1, 2, 3]));
 // Exemple : "Hello" => "Hll"
 
 export const removeVowels = (string) => {
-	const voyelles = ["a", "e", "i", "o", "u", "y"];
-	return string
-		.split("")
-		.filter((caractere) => !voyelles.includes(caractere))
-		.join("");
+	const result = string.replace(/[aeiouAEIOU]/g, "");
+	return result;
 };
 
 console.info("Exercice 8 : ", removeVowels("Hello"));
@@ -124,7 +124,7 @@ console.info("Exercice 8 : ", removeVowels("Hello"));
 // Exemple : [1, 3, 2] => [1, 2, 3]
 
 export const sortArray = (array) => {
-	array.sort((a, b) => a - b);
+	array.sort();
 	return array;
 };
 
@@ -136,15 +136,7 @@ console.info("Exercice 9 : ", sortArray([1, 3, 2]));
 // Ajuste la fonction qui prend en paramètre une string et qui renvoie un tableau avec toutes les rotations possibles de cette string.
 // Exemple : "Hello" => ["elloH", "lloHe", "loHel", "oHell", "Hello"]
 
-export const getStringRotations = (string) => {
-	const arrays = [];
-	for (let i = 0; i < string.length; i++) {
-		const array = string.slice(1) + string[0];
-		arrays.push(array);
-		string = array;
-	}
-	return arrays;
-};
+export const getStringRotations = (string) => {};
 
 console.info("Exercice 10 : ", getStringRotations("Hello"));
 
@@ -154,12 +146,9 @@ console.info("Exercice 10 : ", getStringRotations("Hello"));
 // Ajuste la fonction qui prend en paramètre un tableau et qui doit ajouter le nombre 1 à chaque élément du tableau.
 // Exemple : [1, 2, 3] => [2, 3, 4]
 
-export const incrementArray = (array) => {
-	const plusOne = array.map((cell) => cell + 1);
-	return plusOne;
-};
+// export const incrementArray = () => {}
 
-console.info("Exercice 11 : ", incrementArray([1, 2, 3]));
+// console.info("Exercice 11 : ", incrementArray([1, 2, 3]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 12
@@ -167,12 +156,9 @@ console.info("Exercice 11 : ", incrementArray([1, 2, 3]));
 // Ajuste la fonction qui prend en paramètre un tableau de string et qui doit retourner un tableau avec la longueur de chaque string.
 // Exemple : ["Hello", "World"] => [5, 5]
 
-export const getLengths = (stringsArray) => {
-	const array = stringsArray.map((element) => element.length);
-	return array;
-};
+// export const getLengths = () => {}
 
-console.info("Exercice 12 : ", getLengths(["Hello", "World"]));
+// console.info("Exercice 12 : ", getLengths(["Hello", "World"]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 13
@@ -180,12 +166,9 @@ console.info("Exercice 12 : ", getLengths(["Hello", "World"]));
 // Ajuste la fonction qui prend en paramètre un tableau de string et qui doit retourner un tableau avec toutes les premières lettres de chaque string.
 // Exemple : ["Hello", "World"] => ["H", "W"]
 
-export const getFirstLetters = (stringsArray) => {
-	const array = stringsArray.map((element) => element[0]);
-	return array;
-};
+// export const getFirstLetters = () => {}
 
-console.info("Exercice 13 : ", getFirstLetters(["Hello", "World"]));
+// console.info("Exercice 13 : ", getFirstLetters(["Hello", "World"]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 14
@@ -193,14 +176,9 @@ console.info("Exercice 13 : ", getFirstLetters(["Hello", "World"]));
 // Ajuste la fonction qui prend en paramètre un tableau de string et qui doit retourner un tableau avec toutes les dernières lettres de chaque string.
 // Exemple : ["Hello", "World"] => ["o", "d"]
 
-export const getLastLetters = (stringsArray) => {
-	const array = stringsArray.map((element) =>
-		element.substr(element.length - 1),
-	);
-	return array;
-};
+// export const getLastLetters = () => {}
 
-console.info("Exercice 14 : ", getLastLetters(["Hello", "World"]));
+// console.info("Exercice 14 : ", getLastLetters(["Hello", "World"]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 15
@@ -208,21 +186,14 @@ console.info("Exercice 14 : ", getLastLetters(["Hello", "World"]));
 // Ajuste la fonction qui prend en paramètre un tableau de string et qui doit renvoyer tout les string qui ont une longueur de 5 caractères ou plus.
 // Exemple : ["Hello", "World","Test", "Salut", "Yo"] => ["Hello", "World", "Salut"]
 
-export const filterLongStrings = (stringsArray) => {
-	const array = [];
-	for (let i = 0; i < stringsArray.length; i++) {
-		if (stringsArray[i].length >= 5) {
-			const element = stringsArray[i];
-			array.push(element);
-		}
-	}
-	return array;
-};
+// export const filterLongStrings = () => {
 
-console.info(
-	"Exercice 15 : ",
-	filterLongStrings(["Hello", "World", "Test", "Salut", "Yo"]),
-);
+// };
+
+// console.info(
+// 	"Exercice 15 : ",
+// 	filterLongStrings(["Hello", "World", "Test", "Salut", "Yo"]),
+// );
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 16
@@ -230,12 +201,9 @@ console.info(
 // Ajuste la fonction qui prend une chaîne de caractères en format snake_case et doit retourner une nouvelle chaîne de caractères contenant les mêmes mots, mais sans les underscores.
 // Exemple : "Bonjour_c'est_papy" => "bonjour c'est papy"
 
-export const snake_case = (string_of_Caracters) => {
-	string_of_Caracters = string_of_Caracters.replaceAll("_", " ");
-	return string_of_Caracters;
-};
+// export const snake_case = () => {}
 
-console.info("Exercice 16 : ", snake_case("Bonjour_c'est_papy"));
+// console.info("Exercice 16 : ", snake_case("Bonjour_c'est_papy"));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 17
@@ -243,15 +211,12 @@ console.info("Exercice 16 : ", snake_case("Bonjour_c'est_papy"));
 // Ajuste la fonction qui prend en deux paramètres qui sont deux tableaux de string et qui doit retourner un tableau avec tout les éléments des deux tableaux.
 // Exemple : ["Hello", "World"] et ["Test", "Salut"] => ["Hello", "World", "Test", "Salut"]
 
-export const mergeArrays = (stringsArray1, stringsArray2) => {
-	const array = stringsArray1.concat(stringsArray2);
-	return array;
-};
+// export const mergeArrays = () => {}
 
-console.info(
-	"Exercice 17 : ",
-	mergeArrays(["Hello", "World"], ["Test", "Example"]),
-);
+// console.info(
+// 	"Exercice 17 : ",
+// 	mergeArrays(["Hello", "World"], ["Test", "Example"]),
+// );
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 18
@@ -259,21 +224,13 @@ console.info(
 // Ajuste la fonction qui prend en paramètre un tableau de string et qui doit retourner toutes les strings qui ont la lettre "e".
 // Exemple : ["Poulet", "Chat", "Chien", "Cheval"] => ["Poulet", "Chien", "Cheval"].
 
-export const filterStringsWithE = (stringsArray) => {
-	const array = [];
-	const letter = "e";
-	for (let i = 0; i < stringsArray.length; i++) {
-		if (stringsArray[i].includes(letter)) {
-			const element = stringsArray[i];
-			array.push(element);
-		}
-	}
-	return array;
-};
-console.info(
-	"Exercice 18 : ",
-	filterStringsWithE(["Poulet", "Chat", "Chien", "Cheval"]),
-);
+// export const filterStringsWithE = () => {
+
+// }
+// console.info(
+// 	"Exercice 18 : ",
+// 	filterStringsWithE(["Poulet", "Chat", "Chien", "Cheval"]),
+// );
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 19
@@ -281,19 +238,11 @@ console.info(
 // Ajuste la fonction qui prend en paramètre un tableau de nombres et qui doit retourner tous les nombres qui sont pairs par ordre croissant.
 // Exemple : [2, 9, 6, 5, 6] => [2, 6, 6].
 
-export const filterAndSortEvenNumbers = (numbersArray) => {
-	const array = [];
-	for (let i = 0; i < numbersArray.length; i++) {
-		if (numbersArray[i] % 2 === 0) {
-			const element = numbersArray[i];
-			array.push(element);
-		}
-	}
-	array.sort();
-	return array;
-};
+// export const filterAndSortEvenNumbers = () => {
 
-console.info("Exercice 19 : ", filterAndSortEvenNumbers([2, 9, 6, 5, 6]));
+// };
+
+// console.info("Exercice 19 : ", filterAndSortEvenNumbers([2, 9, 6, 5, 6]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 20
@@ -303,21 +252,12 @@ console.info("Exercice 19 : ", filterAndSortEvenNumbers([2, 9, 6, 5, 6]));
 // findShort("Prachett is the best author in the world") // 2
 // findShort("The quick brown fox jumps over the lazy dog") // 3
 
-export const findShort = (string) => {
-	const array = string.match(/[a-zA-Zéèàùô]+/g);
-	let max = 100;
-	for (let i = 0; i < array.length; i++) {
-		if (array[i].length < max) {
-			max = array[i].length;
-		}
-	}
-	return max;
-};
+// export const findShort = () => {}
 
-console.info(
-	"Exercice 20 : ",
-	findShort("Prachett is the best author in the world"),
-);
+// console.info(
+// 	"Exercice 20 : ",
+// 	findShort("Prachett is the best author in the world"),
+// );
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 21
