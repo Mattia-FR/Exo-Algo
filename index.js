@@ -136,7 +136,16 @@ console.info("Exercice 9 : ", sortArray([1, 3, 2]));
 // Ajuste la fonction qui prend en paramètre une string et qui renvoie un tableau avec toutes les rotations possibles de cette string.
 // Exemple : "Hello" => ["elloH", "lloHe", "loHel", "oHell", "Hello"]
 
-export const getStringRotations = (string) => {};
+export const getStringRotations = (string) => {
+	const rotations = [];
+	for (let i = 0; i < string.length; i++) {
+		const part1 = string.slice(i);
+		const part2 = string.slice(0, i);
+		const rotation = part1 + part2;
+		rotations.push(rotation);
+	}
+	return rotations;
+};
 
 console.info("Exercice 10 : ", getStringRotations("Hello"));
 
@@ -146,9 +155,12 @@ console.info("Exercice 10 : ", getStringRotations("Hello"));
 // Ajuste la fonction qui prend en paramètre un tableau et qui doit ajouter le nombre 1 à chaque élément du tableau.
 // Exemple : [1, 2, 3] => [2, 3, 4]
 
-// export const incrementArray = () => {}
+export const incrementArray = (array) => {
+	const array2 = array.map((element) => element + 1);
+	return array2;
+};
 
-// console.info("Exercice 11 : ", incrementArray([1, 2, 3]));
+console.info("Exercice 11 : ", incrementArray([1, 2, 3]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 12
@@ -156,9 +168,12 @@ console.info("Exercice 10 : ", getStringRotations("Hello"));
 // Ajuste la fonction qui prend en paramètre un tableau de string et qui doit retourner un tableau avec la longueur de chaque string.
 // Exemple : ["Hello", "World"] => [5, 5]
 
-// export const getLengths = () => {}
+export const getLengths = (array) => {
+	const array2 = array.map((element) => element.length);
+	return array2;
+};
 
-// console.info("Exercice 12 : ", getLengths(["Hello", "World"]));
+console.info("Exercice 12 : ", getLengths(["Hello", "World"]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 13
@@ -166,9 +181,12 @@ console.info("Exercice 10 : ", getStringRotations("Hello"));
 // Ajuste la fonction qui prend en paramètre un tableau de string et qui doit retourner un tableau avec toutes les premières lettres de chaque string.
 // Exemple : ["Hello", "World"] => ["H", "W"]
 
-// export const getFirstLetters = () => {}
+export const getFirstLetters = (array) => {
+	const array2 = array.map((element) => element.slice(0, 1));
+	return array2;
+};
 
-// console.info("Exercice 13 : ", getFirstLetters(["Hello", "World"]));
+console.info("Exercice 13 : ", getFirstLetters(["Hello", "World"]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 14
@@ -176,9 +194,12 @@ console.info("Exercice 10 : ", getStringRotations("Hello"));
 // Ajuste la fonction qui prend en paramètre un tableau de string et qui doit retourner un tableau avec toutes les dernières lettres de chaque string.
 // Exemple : ["Hello", "World"] => ["o", "d"]
 
-// export const getLastLetters = () => {}
+export const getLastLetters = (array) => {
+	const array2 = array.map((element) => element.slice(-1));
+	return array2;
+};
 
-// console.info("Exercice 14 : ", getLastLetters(["Hello", "World"]));
+console.info("Exercice 14 : ", getLastLetters(["Hello", "World"]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 15
@@ -186,14 +207,15 @@ console.info("Exercice 10 : ", getStringRotations("Hello"));
 // Ajuste la fonction qui prend en paramètre un tableau de string et qui doit renvoyer tout les string qui ont une longueur de 5 caractères ou plus.
 // Exemple : ["Hello", "World","Test", "Salut", "Yo"] => ["Hello", "World", "Salut"]
 
-// export const filterLongStrings = () => {
+export const filterLongStrings = (array) => {
+	const array2 = array.filter((element) => element.length > 4);
+	return array2;
+};
 
-// };
-
-// console.info(
-// 	"Exercice 15 : ",
-// 	filterLongStrings(["Hello", "World", "Test", "Salut", "Yo"]),
-// );
+console.info(
+	"Exercice 15 : ",
+	filterLongStrings(["Hello", "World", "Test", "Salut", "Yo"]),
+);
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 16
