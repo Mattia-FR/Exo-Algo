@@ -279,7 +279,6 @@ console.info("Exercice 19 : ", filterAndSortEvenNumbers([2, 9, 6, 5, 6]));
 // findShort("The quick brown fox jumps over the lazy dog") // 3
 
 export const findShort = (string) => {
-	let result;
 	const array = string.split(" ").sort((a, b) => a.length - b.length);
 	return array[0].length;
 };
@@ -296,7 +295,11 @@ console.info(
 // Deux chaînes sont des anagrammes si elles contiennent les mêmes caractères, quel que soit l'ordre.
 // Exemple : anagram("listen", "silent") // true
 
-export const anagram = (string1, string2) => {};
+export const anagram = (string1, string2) => {
+	const array1 = string1.split("").sort().join();
+	const array2 = string2.split("").sort().join();
+	return array1 === array2;
+};
 
 console.info("Exercice 21 : ", anagram("listen", "silent"));
 
@@ -306,9 +309,20 @@ console.info("Exercice 21 : ", anagram("listen", "silent"));
 // Écrivez une fonction qui enlève les doubles lettres d'une chaîne donnée.
 // Exemple : removeDoubleLetters("google") // "gogle"
 
-// export const removeDoubleLetters = () => {}
+export const removeDoubleLetters = (string) => {
+	return string.split("").reduce((accumulateur = "", valeur) => {
+		if (
+			accumulateur.length === 0 ||
+			accumulateur[accumulateur.length - 1] !== valeur
+		) {
+			return accumulateur + valeur;
+		} else {
+			return accumulateur;
+		}
+	}, "");
+};
 
-// console.info("Exercice 22 : ", removeDoubleLetters("google"));
+console.info("Exercice 22 : ", removeDoubleLetters("google"));
 
 //----------------------------------------------------------------------------------------------//
 
