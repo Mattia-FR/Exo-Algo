@@ -330,13 +330,28 @@ console.info("Exercice 22 : ", removeDoubleLetters("google"));
 // Écrivez une fonction qui prend un tableau de 10 entiers (entre 0 et 9) et renvoie une chaîne de caractères sous la forme d'un numéro de téléphone.
 // Exemple : createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // "(123) 456-7890"
 
-// export const createPhoneNumber = () => {
-//    };
+export const createPhoneNumber = (array) => {
+	return (
+		"(" +
+		array[0] +
+		array[1] +
+		array[2] +
+		") " +
+		array[3] +
+		array[4] +
+		array[5] +
+		"-" +
+		array[6] +
+		array[7] +
+		array[8] +
+		array[9]
+	);
+};
 
-// console.info(
-// 	"Exercice 23 : ",
-// 	createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]),
-// );
+console.info(
+	"Exercice 23 : ",
+	createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]),
+);
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 24
